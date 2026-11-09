@@ -1,0 +1,16 @@
+name: hello-daily
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: hello
+        run: |
+          date -u
+          echo hello-actions
+          curl -s https://api.github.com/zen
